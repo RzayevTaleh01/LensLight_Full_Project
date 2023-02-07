@@ -20,32 +20,18 @@
                         <a class="<%- link === 'photos' && 'active' %>" href="/photos">Photos</a>
                      </li>
            
-                     <!-- <li>
-                        <a class="<%- link === 'photos' && 'active' %>" href="/services">Services</a>
-                     </li>
-                     <li>
-                        <a class="<%- link === 'photos' && 'active' %>" href="/projects">Projects</a>
-                     </li>
-                     <li>
-                        <a class="<%- link === 'photos' && 'active' %>" href="/blog">Blog</a>
-                     </li>
-                     <li>
-                        <a class="<%- link === 'photos' && 'active' %>" href="/contact">Contact</a>
-                     </li> -->
                   </ul>
-                  <!-- <button class="nav-toggler">
+                  <button class="nav-toggler">
                      <span></span>
-                  </button> -->
+                  </button>
                </nav>
             </div>
          </div>
          <div class="col-md-2 di_none">
             <ul class="email text_align_right">
-               <li><a href="Javascript:void(0)">Login</a></li>
-               <li><a href="./register">Register</a></li>
-
+               <li class="<%- link ==='login' && 'active' %>"><a href="./login">Login</a></li>
+               <li class="<%- link ==='login' && 'active' %>"><a href="./register">Register</a></li>
                <li>
-
                   <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
                </li>
             </ul>

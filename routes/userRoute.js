@@ -6,8 +6,8 @@ const router = express.Router();
 router
   .route("/register")
   .post(userController.createUser)
-//   .get(userController.getAllPhotos);
 
-// router.route("/:id").get(userController.getAPhoto)
+router.route("/login")
+  .post(userController.loginUser)
 
 export default router;
