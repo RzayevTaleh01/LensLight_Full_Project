@@ -1,13 +1,16 @@
 {
-        "version": 2,
-        "name": "lenslight_project",
-        "builds": [
-            { "src": "app.js", "use": "@vercel/node" }
-        ],
-        "routes": [
-            {
-              "src": "/(.*)",
-              "dest": "/app.js"
-            }
-          ]
+    "version": 2,
+    "name": "lenslight_project",
+    "builds": [
+        {
+            "src": "app.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
 }
