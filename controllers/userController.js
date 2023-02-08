@@ -38,10 +38,14 @@ const loginUser = async (req, res) => {
             });
         }
         if (same) {
-            res.status(200).json({
-                user,
-                token: createToken(user._id),
-              });
+            const token = createToken(user._id);
+            //tokenin cookieyə əlavə edilməsi
+            res.cookie("jsonwebtoken",token,{
+                httpOnly:true,
+                maxAge: 1000*60*6*24, //cookienin silinmə müddəti
+
+            });
+            res.redirect("/users/dashboard") // əməliyyat düzdürsə yönləndiriləcəyi yer
         }
         else {
             //parol səhvdirsə 401 erroru
@@ -65,5 +69,12 @@ const createToken = (userId) => {
       expiresIn: '1d',
     });
   };
-export { createUser, loginUser };
+
+const getDashboardPage = (req,res)=>{
+    res.render("dashboard",{
+        link: 'dashboard'
+    })
+}
+
+export { createUser, loginUser,getDashboardPage };
 
