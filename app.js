@@ -38,4 +38,4 @@ index.use("/users", userRoute)
 index.listen(port, () => {
     console.log(`Application running on port: ${port}`);
 })
-export default index;
+export default app;
