@@ -9,7 +9,7 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Username area is required!"],
         lowarcase: true,
-        validate: [validator.isAlphanumeric, "Only Alphanumeric characters!"]
+        validate: [validator.isAlphanumeric,"Only Alphanumeric characters!"]
     },
     email: {
         type: String,
