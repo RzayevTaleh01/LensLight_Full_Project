@@ -14,28 +14,27 @@ dotenv.config();
 //connetcion to the db
 dbConnect();
 
-const index = express();
+const app = express();
 const port = process.env.PORT;
 
 //ejs template engine
-index.set("view engine", "ejs")
+app.set("view engine", "ejs")
 
 //static files middleware
-index.use(express.static("public"));
-index.use(express.json());
-index.use(express.urlencoded({ extended: true }));
-index.use(cookieParser());
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 
 //routes
-index.get("*", checkUser)
-index.use("/", pageRoute);
-index.use("/photos", photoRoute)
-index.use("/test", testRoute)
-index.use("/users", userRoute)
+app.get("*", checkUser)
+app.use("/", pageRoute);
+app.use("/photos", photoRoute)
+app.use("/test", testRoute)
+app.use("/users", userRoute)
 
 
-index.listen(port, () => {
+app.listen(port, () => {
     console.log(`Application running on port: ${port}`);
 })
-export default index;
