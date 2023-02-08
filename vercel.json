@@ -1,15 +1,10 @@
 {
     "version": 2,
+    "name": "lenslight_project",
     "builds": [
-      {
-        "src": "app.js",
-        "use": "@now/node"
-      }
+      { "src": "app.js", "use": "@vercel/node" }
     ],
     "routes": [
-        {
-          "src": "/routes/(.*)",
-          "dest": "index.js"
-        }
-      ]
+      { "src": "/(.*)", "dest": "/app.js" }
+    ]
   }
