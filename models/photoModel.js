@@ -17,12 +17,16 @@ const photoSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    user:{
+    url: {
+        type: String,
+        required: true
+    },
+    user: {
         type: Schema.Types.ObjectId,
-        ref:"User"
+        ref: "User"
     }
 })
 
-const Photo = mongoose.model("Photo",photoSchema);
+const Photo = mongoose.model("Photo", photoSchema);
 
 export default Photo;

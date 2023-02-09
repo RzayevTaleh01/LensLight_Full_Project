@@ -8,8 +8,6 @@ const createUser = async (req, res) => {
         const user = await User.create(req.body);
         res.status(201).json({ user: user._id });
     } catch (error) {
-      
-
         let errorsMessages = {};
 
         if (error.code === 11000) {
@@ -29,11 +27,8 @@ const createUser = async (req, res) => {
 const loginUser = async (req, res) => {
     try {
         const { username, password } = req.body;
-
         const user = await User.findOne({ username });
-
         let same = false;
-
         if (user) {
             same = await bcrypt.compare(password, user.password);
         } else {
@@ -71,8 +66,8 @@ const createToken = (userId) => {
     });
 };
 
-const getDashboardPage = async(req, res) => {
-    const photos = await Photo.find({user: res.locals.user._id})
+const getDashboardPage = async (req, res) => {
+    const photos = await Photo.find({ user: res.locals.user._id })
     res.render('dashboard', {
         link: 'dashboard',
         photos
